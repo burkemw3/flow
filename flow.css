@@ -1,0 +1,43 @@
+/* flow.css — mobile-first styles for centered number + hamburger menu */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+	display:flex;
+	flex-direction:column;
+	min-height:100vh;
+	background:linear-gradient(180deg,#0f172a,#0b1220);
+	color:#fff;
+}
+
+.topbar{position:fixed;top:12px;left:12px;z-index:20}
+.hamburger{background:transparent;border:0;padding:8px;display:inline-flex;flex-direction:column;gap:6px;align-items:center;cursor:pointer;color:inherit}
+.hamburger:focus{outline:2px solid rgba(255,255,255,0.12);border-radius:6px}
+.hamburger .bar{display:block;width:26px;height:3px;background:currentColor;border-radius:2px}
+
+.nav{position:fixed;inset:0;background:rgba(2,6,23,0.95);backdrop-filter:blur(6px);transform:translateX(-100%);transition:transform .25s ease;z-index:15;padding:64px 20px}
+.nav.open{transform:translateX(0)}
+.nav ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+.nav a{color:#cbd5e1;text-decoration:none;font-size:18px}
+
+.content{flex:1;display:flex;align-items:center;justify-content:center;padding:40px}
+.number-wrap{text-align:center;width:100%;max-width:700px}
+#large-number{margin:0;font-weight:800;line-height:1;font-size:24vw}
+.input-row{display:flex;justify-content:center;gap:12px;align-items:center;margin-top:18px}
+#small-input{margin:0;width:60%;max-width:260px;padding:10px 14px;font-size:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);color:inherit;text-align:center}
+.buy{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.16);background:#06b6d4;color:#042a2b;font-weight:700;cursor:pointer;font-size:16px}
+.buy:active{transform:translateY(1px)}
+
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+@media(min-width:700px){
+	#large-number{font-size:12rem}
+	.hamburger .bar{width:32px;height:4px}
+	.nav{width:260px;left:0;transform:translateX(-100%);padding-top:80px}
+	.nav.open{transform:translateX(0)}
+	.topbar{left:20px;top:20px}
+	.content{padding:80px}
+	#small-input{font-size:20px}
+}
+

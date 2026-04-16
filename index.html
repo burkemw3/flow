@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Flow — Numbers</title>
+	<link rel="stylesheet" href="flow.css">
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="theme-color" content="#0b1220">
+	<link rel="apple-touch-icon" href="icons/icon-192.svg">
+</head>
+<body>
+	<header class="topbar">
+		<button id="menu-btn" class="hamburger" aria-label="Open menu" aria-expanded="false">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</button>
+
+		<nav id="site-nav" class="nav" aria-hidden="true">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="settings.html">Settings</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="content">
+		<div class="number-wrap">
+			<h1 id="large-number">42</h1>
+			<label for="small-input" class="visually-hidden">Enter number</label>
+			<div class="input-row">
+				<input id="small-input" type="number" inputmode="numeric" placeholder="Enter number">
+				<button id="buy-btn" class="buy" aria-label="Buy">Buy</button>
+			</div>
+		</div>
+	</main>
+
+	<script src="flow.js"></script>
+</body>
+</html>
+
