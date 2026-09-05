@@ -27,6 +27,7 @@ body{
 .input-row{display:flex;justify-content:center;gap:12px;align-items:center;margin-top:18px}
 #small-input{margin:0;width:60%;max-width:260px;padding:10px 14px;font-size:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);color:inherit;text-align:center}
 .buy{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.16);background:#06b6d4;color:#042a2b;font-weight:700;cursor:pointer;font-size:16px}
+.earn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.16);background:#22c55e;color:#042a2b;font-weight:700;cursor:pointer;font-size:16px}
 .buy:active{transform:translateY(1px)}
 
 .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}

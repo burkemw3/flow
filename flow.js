@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	const nav = document.getElementById('site-nav');
 	const large = document.getElementById('large-number');
 	const input = document.getElementById('small-input');
-	const buyBtn = document.getElementById('buy-btn');
+	const spendBtn = document.getElementById('spend-btn');
+	const earnBtn = document.getElementById('earn-btn');
 
 	// Nav toggle
 	if(menuBtn && nav){
@@ -81,9 +82,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 	updateUI();
 
-	// Buy behavior: deduct amount from balance and persist
-	if(buyBtn && input){
-		buyBtn.addEventListener('click', ()=>{
+	// Spend behavior: deduct amount from balance and persist
+	if(spendBtn && input){
+		spendBtn.addEventListener('click', ()=>{
 			const raw = input.value.trim();
 			const amount = raw === '' ? NaN : Number(raw);
 			if(!Number.isFinite(amount) || amount <= 0){
@@ -93,6 +94,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			}
 
 			state.currentBalance = Math.round((state.currentBalance - amount) * 100) / 100;
+			saveState(state);
+			updateUI();
+			input.value = '';
+		});
+	}
+
+	// Earn behavior: add amount to balance and persist
+	if(earnBtn && input){
+		earnBtn.addEventListener('click', ()=>{
+			const raw = input.value.trim();
+			const amount = raw === '' ? NaN : Number(raw);
+			if(!Number.isFinite(amount) || amount <= 0){
+				input.focus();
+				alert('Please enter a positive number');
+				return;
+			}
+
+			state.currentBalance = Math.round((state.currentBalance + amount) * 100) / 100;
 			saveState(state);
 			updateUI();
 			input.value = '';
